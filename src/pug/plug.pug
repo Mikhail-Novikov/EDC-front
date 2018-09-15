@@ -1,0 +1,19 @@
+include lib/variables
+include lib/mixins
+include blocks/page
+
+include blocks/plug_content
+include blocks/promo
+
+include blocks/header
+include blocks/footer
+
+
++page(pagesList.plug.title)
+  +header('plug')
+  +b.main.__main
+
+    +promo
+    +plug_content
+
+  +footer.__footer

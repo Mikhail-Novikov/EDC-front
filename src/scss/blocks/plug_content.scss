@@ -1,0 +1,56 @@
+.plug{
+
+  &_content{
+
+  }  
+
+  position: relative;
+
+
+  &__footer{
+    margin: 50px 15px;
+
+    .row{
+      height: 100%;
+    }
+    &-text{
+      color: #000000;
+      font-family: "proxima-regular";
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+
+    }
+  }
+
+  @include media-breakpoint-up(xss) {
+    &__footer{
+      margin: 50px;      
+      &-text{
+        font-size: 15px;
+        white-space: nowrap;        
+      } 
+    }       
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__footer{
+
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    
+  }
+
+  @include media-breakpoint-up(lg) {
+    
+  }
+
+  @include media-breakpoint-up(xl) {
+    
+  }
+
+}
+

@@ -1,0 +1,33 @@
+.promo{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 300PX;
+    &__bg{
+    background: url(../img/bg-promo.jpg) no-repeat 70% top;
+    height: 100%;
+    background-size: 140%;
+    }
+
+
+  @include media-breakpoint-up(xss) {
+    height: 300px;
+    overflow: hidden;
+
+    &__bg{
+      width: auto;
+      max-width: initial;
+
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    height: 375px;
+
+  }
+  @include media-breakpoint-up(xl) {
+    height: 600px;
+  }
+
+
+}

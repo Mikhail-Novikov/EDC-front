@@ -1,0 +1,35 @@
+[class*='icon-svg-'] {
+  fill: currentColor;
+}
+
+[class*='icon-svg-'] use {
+  pointer-events: none;
+}
+
+.icon-svg-speech_bubble {
+  width: 1em;
+  height: 1em;
+}
+
+#icon-svg-speech_bubble {
+  
+}
+
+.icon-svg-logo-h {
+  width: 0.875em;
+  height: 1em;
+}
+
+#icon-svg-logo-h {
+  
+}
+
+.icon-svg-more {
+  width: 1.375em;
+  height: 1em;
+}
+
+#icon-svg-more {
+  
+}
+

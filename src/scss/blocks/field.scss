@@ -1,0 +1,59 @@
+textarea.field{
+  padding: calc-size(10) calc-size(18);
+  height: 70px;
+  resize: none;
+  &::-webkit-input-placeholder {
+    color: #8b8a8a;
+  }
+  @include media-breakpoint-up(xss) {
+    height: 105px;
+  }
+}
+.field {
+  color: #000;
+  font-size: calc-size(15);
+  font-family: "proxima-regular";
+  font-weight: 400;  
+  line-height: calc-size(24);
+  margin-bottom: 15px;
+  display: block;
+  vertical-align: top;
+  padding: 15px;
+  height: 40px;
+  border: 1px solid #c3c3c3;
+  background-color: #f7f7f7;
+  transition: 0.3s;
+  text-align: left;
+
+  &::placeholder {
+    color: #8b8a8a;
+    font-family: "proxima-regular";
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+
+
+  @include media-breakpoint-down(sm) {
+    --scale: 14/16;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus::placeholder {
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  @include media-breakpoint-up(xss) {
+    padding: 15px; 
+    height: 43px;   
+  }
+
+
+}

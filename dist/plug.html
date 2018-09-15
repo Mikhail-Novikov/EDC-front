@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <title>Заглушка — edcrecours.ru</title>
+    <!-- Meta-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS-->
+    <link rel="stylesheet" href="css/lib.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- JS-->
+    <script>
+      // Load and insert svg-symbols.svg
+      (function()
+      {
+        'use strict';
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function()
+        {
+          if (xhr.status >= 200 && xhr.status < 400)
+          {
+            document.body.insertAdjacentHTML('afterbegin', xhr.responseText);
+          }
+        };
+        xhr.open('GET', 'img/svg-symbols.svg', true);
+        xhr.send();
+      })();
+    </script>
+  </head>
+  <body class="page__body">
+    <div class="page__body-inner">
+      <header class="header">
+        <div class="header__inner justify-content-between">
+          <div class="header__logo">
+            <div class="header__logo-img">
+              <svg class="icon-svg-logo-h align-middle" role="img">
+                <use xlink:href="#icon-svg-logo-h"></use>
+              </svg>
+            </div>
+            <p class="header__logo-text align-middle">ресурс</p>
+            <strong class="header__logo-desc">Экспертно-диагностический центр</strong>
+          </div>
+          <div class="header__contacts">
+            <a class="header__contacts-fhone" href="tel:88127025643">8 812 702 56 43</a>
+            <a class="header__contacts-link trait" href="#">обратный звонок</a>
+          </div>
+        </div>
+      </header>
+      <div class="main page__main">
+        <div class="promo">
+          <div class="promo__bg"></div>
+        </div>
+        <section class="plug">
+          <div class="modal" id="valid_form">
+            <form class="modal__inner text-center">
+              <h1 class="title">наш сайт в разработке,
+                <span class="text">но мы с радостью вам ответим:</span>
+              </h1>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="posr">
+                    <div class="hidden" :class="minerror($v.name)">Минимум 3 символа</div>
+                    <input class="field w-100" type="text" placeholder="Ваше имя..." name="nic" v-model="$v.name.$model" autocomplete="off" />
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="posr">
+                    <div class="hidden" :class="[isEmailValid()]">Введите Вашу почту </div>
+                    <input class="field w-100" type="text" placeholder="E-mail" name="email" v-model="email" autocomplete="off" />
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-0">
+                <div class="col-sm-6">
+                  <div class="posr">
+                    <div class="hidden" :class="status($v.message)">Введите сообщение </div>
+                    <textarea class="field w-100" placeholder="Текст сообщения" v-model="$v.message.$model" autocomplete="off"> </textarea>
+                  </div>
+                </div>
+              </div>
+              <p class="modal__info">*Нажимая кнопку «Отправить», вы принимаете условия «Политики обработки персональных данных»</p>
+              <div class="modal__contacts_btn mt-20">
+                <button class="btn-border-grad" type="submit" :disabled="submitStatus()">Отправить сообщение</button>
+              </div>
+            </form>
+          </div>
+          <footer class="plug__footer">
+            <div class="row align-items-center">
+              <p class="plug__footer-text col-xss-3 text-xss-left">© 2018. ЭДЦ «Ресурс».
+                <br/>Тел.: 8 (812) 702-56-43, 8 903 094 76 43. </p>
+              <p class="plug__footer-text col-xss-3 text-xss-right">Санкт-Петербург. г. Пушкин, Красносельское шоссе,
+                <br/>д. 14/28, лит. АБ, Помещение 3-Н, комната № 161.</p>
+            </div>
+          </footer>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="page__inner"></div>
+      </footer>
+    </div>
+    <!-- JS-->
+    <script src="js/lib.js">
+    </script>
+    <script src="js/app.js" async=""></script>
+  </body>
+</html>

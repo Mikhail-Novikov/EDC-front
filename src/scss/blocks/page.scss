@@ -1,0 +1,47 @@
+.page{
+  &__main{
+    position: relative;
+  }
+  &__body{
+
+
+    &-inner{
+      height: 100vh;
+      position: relative;
+    }
+  }
+
+
+  .stick-top{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      background: url(../img/stick-top.jpg) no-repeat 50% 50%;
+      background-size: 100%; 
+      display: block;
+      height: 100%;
+      width: 100%; 
+      top: 0;  
+    }    
+  }
+
+  .wrap-stick{
+    height: 1px;
+    position: relative;
+    img{
+      position: absolute;
+      bottom: 0;
+      z-index: 5;
+      left: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: 0;
+      left: 0;      
+    }
+
+
+  }
+
+}

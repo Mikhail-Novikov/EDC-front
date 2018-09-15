@@ -1,0 +1,26 @@
+include lib/variables
+include lib/mixins
+include blocks/page
+
+include blocks/intro-section
+
+include blocks/header
+include blocks/footer
+
+
+
++page(pagesList.index.title)
+  +header('home')
+  +b.main.__main
+    +intro-section
+
+    +b.SECTION.benefit-section
+
+      .container
+        .row
+      .wrap-stick
+        img(src="img/stick-top.png", alt="")
+    
+
+
+  +footer.__footer

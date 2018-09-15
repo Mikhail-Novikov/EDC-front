@@ -1,0 +1,74 @@
+.btn-border-grad {
+  position: relative;
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: transparent; 
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "proxima-regular";
+  z-index: 1;
+  width: 100%;
+  border: 0;
+  transition: 0.6s;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #4fbe9b 0%, #4fbe9b 15%, #108db3 85%, #108db3 100%);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: 2px;
+    background-color: #ffffff;
+    transition: background 0.3s;    
+  }
+
+
+
+  &:hover {
+    &::after {     
+      background: linear-gradient(to right, #4fbe9b 0%, #4fbe9b 15%, #108db3 85%, #108db3 100%);
+    }
+    color: #fff;
+  }
+
+
+  &:disabled {
+    opacity: 0.7;
+    color: #000;
+    cursor: not-allowed;
+    &::after { 
+      background: #fff;
+    }   
+  }
+  @include media-breakpoint-up(xss) {
+    font-weight: 300;
+    font-family: "proxima-light";
+  } 
+
+  @include media-breakpoint-up(sm) {
+
+  }
+
+  @include media-breakpoint-up(md) {
+
+  }
+
+  @include media-breakpoint-up(lg) {
+
+  }
+}

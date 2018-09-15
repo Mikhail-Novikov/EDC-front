@@ -1,0 +1,98 @@
+.modal{
+  color: #000000;
+  font-family: "proxima-regular";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  width: 100%;
+  padding: 80px 15px 0;
+
+  &__inner{
+    padding: 20px;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto 0;
+    box-shadow: 0 16px 12px rgba(6, 6, 6, 0.11);
+    background-color: #ffffff;  
+
+    h1.title{
+      font-family: "museo900";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    span.text{
+      font-size: 11px;
+      line-height: 1.1;
+      display: inline-block;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &__info{
+    font-size: 10px;
+    text-align: left;
+  }
+
+  .hidden{
+    display: none;
+    opacity: 0;    
+  }
+  .error, .minerr{
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5px 4px 3px;
+    text-align: left;
+    background-color: #df3f3f;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 1;
+    transition: 0.1s;
+    animation: errorshow 0.3s ease-out;
+    transform: translateY(-22px);      
+  }
+  .error ~ .field, .minerr ~ .field{
+    border-color: #df3f3f;
+  }
+
+  @keyframes errorshow {
+    from{
+      transform: translateY(0); 
+      opacity: 0;  
+    }
+    to{
+      transform: translateY(-22px);     
+    }    
+  }
+
+  @include media-breakpoint-up(xss) {
+    padding-top: 170px;
+    &__inner{
+      padding: 35px;      
+      margin-top: 0;
+      height: auto;
+      h1.title{
+        font-size: 45px;
+        line-height: 48px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+      span.text{
+        font-size: 22px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+}
