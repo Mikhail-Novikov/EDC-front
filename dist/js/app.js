@@ -102,7 +102,13 @@ var _validForm = __webpack_require__(2);
 
 var _validForm2 = _interopRequireDefault(_validForm);
 
+var _header = __webpack_require__(31);
+
+var _header2 = _interopRequireDefault(_header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _header2.default)();
 
 /***/ }),
 /* 2 */
@@ -123,8 +129,10 @@ exports.default = validForm();
 
 
 function validForm() {
+  var form = document.getElementById('valid_form');
+  if (typeof form == 'undefined' || form == null) return false;
 
-  var app = new Vue({
+  new Vue({
     el: '#valid_form',
     data: function data() {
       return {
@@ -1409,6 +1417,46 @@ var _common = __webpack_require__(5);
 var _default = (0, _common.regex)('decimal', /^[-]?\d*(\.\d+)?$/);
 
 exports.default = _default;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = header;
+
+
+function header() {
+
+  var header = new Vue({
+    el: '#header',
+    data: function data() {
+      return {
+        show: false
+      };
+    },
+
+    created: function created() {
+      document.addEventListener('click', this.closeAllWin);
+    },
+    methods: {
+      closeSearchWin: function closeSearchWin(event) {
+        return this.show == false ? this.show = true : this.show = false;
+      },
+      closeAllWin: function closeAllWin(event) {
+        console.log(event);
+        if (event.target.parentElement.classList[0] == "header__search-group" || event.target.parentElement.classList[0] == 'header__search-open-btn') return false;
+
+        this.show = false;
+      }
+    }
+  });
+}
 
 /***/ })
 /******/ ]);

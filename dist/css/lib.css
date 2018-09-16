@@ -434,7 +434,7 @@ template {
   pointer-events: none;
 }
 
-.icon-svg-speech_bubble {
+.icon-svg-close-search {
   width: 1em;
   height: 1em;
 }
@@ -444,8 +444,18 @@ template {
   height: 1em;
 }
 
-.icon-svg-more {
-  width: 1.375em;
+.icon-svg-search-input {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-svg-search {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-svg-speech_bubble {
+  width: 1em;
   height: 1em;
 }
 

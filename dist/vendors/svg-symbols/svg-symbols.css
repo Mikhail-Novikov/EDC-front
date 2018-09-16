@@ -6,12 +6,12 @@
   pointer-events: none;
 }
 
-.icon-svg-speech_bubble {
+.icon-svg-close-search {
   width: 1em;
   height: 1em;
 }
 
-#icon-svg-speech_bubble {
+#icon-svg-close-search {
   
 }
 
@@ -24,12 +24,29 @@
   
 }
 
-.icon-svg-more {
-  width: 1.375em;
+.icon-svg-search-input {
+  width: 1em;
   height: 1em;
 }
 
-#icon-svg-more {
+#icon-svg-search-input {
   
 }
-
+
+.icon-svg-search {
+  width: 1em;
+  height: 1em;
+}
+
+#icon-svg-search {
+  
+}
+
+.icon-svg-speech_bubble {
+  width: 1em;
+  height: 1em;
+}
+
+#icon-svg-speech_bubble {
+  
+}

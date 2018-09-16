@@ -1,22 +1,50 @@
 mixin header(x)
-  +b.HEADER.header
-    +e.inner.justify-content-between
-      +e.logo
-        +e.logo-img
-          +icon-svg('logo-h').align-middle
-        +e.P.logo-text.align-middle ресурс
+  +b.HEADER.header#header(class=`${x}` @click="closeAllWin")
+    case x
+      when 'plug'
+        +e.inner.justify-content-between
+          +e.logo
+            +e.logo-img
+              +icon-svg('logo-h').align-middle
+            +e.P.logo-text.align-middle ресурс
 
-        +e.STRONG.logo-desc Экспертно-диагностический центр
+            +e.STRONG.logo-desc Экспертно-диагностический центр
 
-      +e.contacts
-        +e.A(href="tel:88127025643").contacts-fhone 8 812 702 56 43
+          +e.contacts
+            +e.A(href="tel:88127025643").contacts-fhone 8 812 702 56 43
 
-        +e.A(href="#").contacts-link.trait обратный звонок
-      
-      case x
-        when 'home'
-          +e.call-message
-            +icon-svg('speech_bubble').align-middle 
-            +e.A(href="#").contacts-link.trait.align-top написать нам 
+            +e.A(href="#").contacts-link.trait обратный звонок
+
+    case x
+      when 'home'
+        .container
+          .row.posr.justify-content-between
+            +e.inner
+              +e.logo
+                +e.logo-img
+                  +icon-svg('logo-h').align-middle
+                +e.P.logo-text.align-middle ресурс
+
+                +e.STRONG.logo-desc Экспертно-диагностический центр
+
+              +e.contacts
+                +e.A(href="tel:88127025643").contacts-fhone 8 812 702 56 43
+
+                +e.A(href="#").contacts-link.trait обратный звонок            
+
+              +e.call-message
+                +icon-svg('speech_bubble').align-middle 
+                +e.A(href="#").contacts-link.trait.align-top написать нам 
+            +e.FORM.search
+              +e.SPAN.search-open-btn(@click="closeSearchWin")
+                +icon-svg('search').align-middle
+
+              transition(name="fade")
+                +e.search-group(v-if="show")
+                  +e.BUTTON.search-run-btn(type="submit")
+                    +icon-svg('search-input').align-middle                    
+                  +e.INPUT.input-search(placeholder="Введите текст поиска" type="search" )
+                  +e.SPAN.search-close-btn(@click="closeSearchWin")
+                    +icon-svg('close-search').align-middle                    
 
 

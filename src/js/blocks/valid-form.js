@@ -3,8 +3,10 @@ const { required, minLength } = require('vuelidate/lib/validators');
 export default validForm();
 
 function validForm(){
+  var form = document.getElementById('valid_form');
+  if (typeof(form) == 'undefined' || form == null) return false;
 
-  var app = new Vue({
+  new Vue({
     el: '#valid_form',
     data() {
       return {

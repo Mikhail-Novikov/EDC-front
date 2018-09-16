@@ -16,3 +16,40 @@
     @content;
   }
 }
+
+// Стилизация placeholder
+// пример: @include place($red);
+@mixin place($cl){
+
+  &::-webkit-input-placeholder{
+    color: $cl;
+    font-size: $input-font-size;
+    opacity: 1; 
+  }
+  &:focus::-webkit-input-placeholder{
+    opacity: 0.3;   
+  }
+  &::-moz-placeholder{
+    color: $cl;
+    font-size: $input-font-size;    
+  }
+  &:focus::-moz-input-placeholder{
+    opacity: 0.3;  
+  }
+  &:-moz-placeholder{
+    color: $cl;
+    font-size: $input-font-size;
+
+  }
+  &:focus:-moz-input-placeholder{
+    opacity: 0.3;  
+  }
+
+  &:-ms-input-placeholder{
+    color: $cl;
+    font-size: $input-font-size;
+  }
+  &:focus:-ms-input-placeholder{
+    opacity: 0.3;    
+  }
+}
