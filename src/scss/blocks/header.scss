@@ -1,15 +1,15 @@
 .header{
   color: #000000;
+  background-color: #fff;
   font-family: "proxima-regular";
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
   text-transform: uppercase; 
-  position: relative;
-  z-index: 6;
   .row{
     overflow: hidden;
     flex-wrap: nowrap;
+    z-index: 12;
   }
 
   &__inner{
@@ -17,7 +17,7 @@
     padding: 20px 15px 25px;    
     display: flex;
     flex-wrap: wrap;
-    align-items: center;    
+    align-items: center;  
   }
   &.home{
     .header__inner{
@@ -103,6 +103,9 @@
   &__search{
     display: flex;
     align-items: center;
+    background-color: transparent;
+    position: relative;
+    z-index: 9;
     &-group{
       position: absolute;
       right: 0;
@@ -132,7 +135,7 @@
       cursor: pointer;
       svg{
         color: #fff;
-        font-size: 30px;
+        font-size: 20px;
       }
     }
 

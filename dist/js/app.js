@@ -1449,9 +1449,7 @@ function header() {
         return this.show == false ? this.show = true : this.show = false;
       },
       closeAllWin: function closeAllWin(event) {
-        console.log(event);
         if (event.target.parentElement.classList[0] == "header__search-group" || event.target.parentElement.classList[0] == 'header__search-open-btn') return false;
-
         this.show = false;
       }
     }
