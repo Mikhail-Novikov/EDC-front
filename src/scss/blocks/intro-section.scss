@@ -1,8 +1,105 @@
 .intro-section{
+  position: relative;
+  z-index: 12;
+
   .container{
-    height: 400px;    
+    height: 480px;
+    overflow: hidden;    
   }
 
+  .v-carousel, .swiper-container, .row{
+    height: 100%;
+    background: #fff;    
+  }
+  .v-carousel{
+    padding: 0;
+  }
+  .swiper-pagination.swiper-pagination-custom{
+      color: #fff;
+      font-family: "museo900";
+      text-transform: uppercase;    
+    .item-slider{
+      font-size: 32px;
+    }
+    .total-sliders{
+      font-size: 22px;
+    }
+  }
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 50%;
+    transform: translateY(50%);
+    right: 85px; 
+  }
+  .title{
+    margin-bottom: 40px;
+  }
+  &__desc{
+    margin-bottom: 40px;
+    font-size: 15px;
+    max-height: 5.8em;
+    overflow: hidden;
+  }
+
+  &__ref{
+    display: block;
+    color: #000000;
+    font-family: "proxima-regular";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    position: relative;     
+    &:before{
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      background: url('../img/icons/icon/ref.svg') no-repeat center left;
+    }
 
 
+  }
+
+  &__content {
+    background-color: #fff;
+    padding: 40px 50px 45px 25px;
+    position: relative;
+    &-item{
+      transition: 1s;
+      opacity: 1;
+    }
+    .btn-border-grad{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding-top: 21px;
+      padding-bottom: 21px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+    .posr{
+      height: 100%;
+    }
+
+  }
+
+  &__content-carousel{
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+} 
+
+.animate-carousel-enter-active,
+.animate-carousel-leave-active {
+    transition: 3s;
+}
+
+.animate-carousel-enter, .animate-carousel-leave-to{
+    opacity: 1;
+    transition: 3s;    
 }

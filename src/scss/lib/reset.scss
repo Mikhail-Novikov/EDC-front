@@ -5,16 +5,33 @@
   margin: 0;
   padding: 0;
 }
+*::selection {
+  background: transparent;
+}
+*::-moz-selection {
+  background: transparent;
+}
 
+*::selection {
+  background: transparent;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
+
+*::selection {
+  background: transparent;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
 :root {
   --scale: 1;
   scroll-behavior: smooth;
 }
 
-::selection {
-  color: white;
-  background-color: $color-link;
-}
 a{
   text-decoration: none;
 }

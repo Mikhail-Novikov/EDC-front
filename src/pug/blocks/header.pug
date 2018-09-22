@@ -17,34 +17,65 @@ mixin header(x)
 
     case x
       when 'home'
+        .h-fon
+          .container
+            .row.posr.justify-content-between
+              +e.inner.col-sm-5.justify-content-between
+                +e.logo
+                  +e.logo-img
+                    +icon-svg('logo-h').align-middle
+                  +e.P.logo-text.align-middle ресурс
+
+                  +e.STRONG.logo-desc Экспертно-диагностический центр
+
+                +e.contacts
+                  +e.A(href="tel:88127025643").contacts-fhone 8 812 702 56 43
+
+                  +e.A(href="#").contacts-link.trait обратный звонок            
+
+                +e.call-message
+                  +icon-svg('speech_bubble').align-middle 
+                  +e.A(href="#").contacts-link.trait.align-top написать нам 
+              +e.FORM.search
+                +e.SPAN.search-open-btn(@click="closeSearchWin")
+                  +icon-svg('search').align-middle
+
+                transition(name="fade")
+                  +e.search-group(v-if="show")
+                    +e.BUTTON.search-run-btn(type="submit")
+                      +icon-svg('search-input').align-middle                    
+                    +e.INPUT.input-search(placeholder="Введите текст поиска" type="search" )
+                    +e.SPAN.search-close-btn(@click="closeSearchWin")
+                      +icon-svg('close-search').align-middle  
+
         .container
-          .row.posr.justify-content-between
-            +e.inner
-              +e.logo
-                +e.logo-img
-                  +icon-svg('logo-h').align-middle
-                +e.P.logo-text.align-middle ресурс
+          .row
+            +b.NAV.sub-menu.justify-content-between
+              +e.UL.items.col-sm-5
+                +e.LI.item.active
+                  +e.A.item-a(href="#") главная
 
-                +e.STRONG.logo-desc Экспертно-диагностический центр
+                +e.LI.item
+                  +e.A.item-a(href="#") О компании
 
-              +e.contacts
-                +e.A(href="tel:88127025643").contacts-fhone 8 812 702 56 43
+                +e.LI.item
+                  +e.A.item-a(href="#") Услуги
 
-                +e.A(href="#").contacts-link.trait обратный звонок            
+                +e.LI.item
+                  +e.A.item-a(href="#") Новости
 
-              +e.call-message
-                +icon-svg('speech_bubble').align-middle 
-                +e.A(href="#").contacts-link.trait.align-top написать нам 
-            +e.FORM.search
-              +e.SPAN.search-open-btn(@click="closeSearchWin")
-                +icon-svg('search').align-middle
+                +e.LI.item
+                  +e.A.item-a(href="#") выполненные работы
 
-              transition(name="fade")
-                +e.search-group(v-if="show")
-                  +e.BUTTON.search-run-btn(type="submit")
-                    +icon-svg('search-input').align-middle                    
-                  +e.INPUT.input-search(placeholder="Введите текст поиска" type="search" )
-                  +e.SPAN.search-close-btn(@click="closeSearchWin")
-                    +icon-svg('close-search').align-middle                    
+                +e.LI.item
+                  +e.A.item-a(href="#") Отзывы
 
+                +e.LI.item
+                  +e.A.item-a(href="#") Эксперты
+
+                +e.LI.item
+                  +e.A.item-a(href="#") контакты
+
+              +e.A(href="#").login-items
+                +e.SPAN.login-item Вход
 

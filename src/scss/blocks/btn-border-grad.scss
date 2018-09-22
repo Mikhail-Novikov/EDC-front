@@ -10,7 +10,7 @@
   z-index: 1;
   width: 100%;
   border: 0;
-  transition: 0.6s;
+
   cursor: pointer;
 
   &::before {
@@ -44,8 +44,19 @@
       background: linear-gradient(to right, #4fbe9b 0%, #4fbe9b 15%, #108db3 85%, #108db3 100%);
     }
     color: #fff;
+
+    .i-yes{
+      background: url(../img/icons/i-yes-white.svg) no-repeat center;
+    }
+
   }
 
+  .i-yes{
+    display: inline-block;
+    background: url(../img/icons/i-yes.svg) no-repeat center;
+    width: 20px;
+    height: 14px;
+  }
 
   &:disabled {
     opacity: 0.7;
@@ -72,3 +83,5 @@
 
   }
 }
+
+

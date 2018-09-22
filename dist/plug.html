@@ -48,7 +48,7 @@
       })();
     </script>
   </head>
-  <body class="page__body stick-top">
+  <body class="page__body">
     <div class="page__body-inner">
       <header class="header plug" id="header" @click="closeAllWin">
         <div class="header__inner justify-content-between">
@@ -118,6 +118,47 @@
       <footer class="footer">
         <div class="page__inner"></div>
       </footer>
+    </div>
+    <div class="modal">
+      <div class="modal__registration">
+        <div class="modal__content">
+          <div class="m-header">
+            <h3 class="m-title">регистрация</h3>
+            <button class="m-close" type="button">
+              <svg class="icon-svg-close" role="img">
+                <use xlink:href="#icon-svg-close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="m-body-content">
+            <p class="m-text">Укажите e-mail, указанный при регистрации, и мы вышлем на него инструкции по смене пароля:</p>
+            <div class="m-form-group">
+              <div class="hidden" :class="minerror($v.name)">Минимум 3 символа</div>
+              <input class="field w-100" type="text" placeholder="Логин..." name="login" v-model="$v.login.$model" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="minerror($v.name)">Минимум 3 символа</div>
+              <input class="field w-100" type="text" placeholder="Ваше имя..." name="nic" v-model="$v.name.$model" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">Введите Вашу почту </div>
+              <input class="field w-100" type="text" placeholder="E-mail" name="email" v-model="email" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">Введите пароль </div>
+              <input class="field w-100" type="text" placeholder="Пароль..." name="password" v-model="password" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">пароли не совпадают! </div>
+              <input class="field w-100" type="text" placeholder="Повторите пароль..." name="c-password" v-model="c-password" autocomplete="off" />
+            </div>
+          </div>
+          <div class="m-footer-content">
+            <button class="btn-border-grad" type="submit" :disabled="submitStatus()">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal__order"></div>
     </div>
     <!-- JS-->
     <script src="js/lib.js">

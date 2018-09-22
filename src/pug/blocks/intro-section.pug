@@ -1,5 +1,60 @@
 mixin intro-section
-  +b.SECTION.intro-section
+  +b.SECTION.intro-section#v-carousel
     .container
       .row
         
+        .v-carousel.col-sm-4
+          swiper(:options="swiperOption" ref="swiper")
+            swiper-slide
+              img(src="img/intro/is1.jpg", alt="")
+              +e.content-carousel(ref="swiper_content")
+                h2.title Экспертиза промышленной безопасности
+                +e.desc 
+                  p.text.b--text Опыт работы: 10 лет
+                  p.text Кратчайшие сроки и высокое качество  
+                +e.A.ref(href="#") 
+                  span.trait подробнее об услуге
+
+
+            swiper-slide
+              img(src="img/intro/is1.jpg", alt="")
+              +e.content-carousel(ref="swiper_content")
+                h2.title Экспертиза промышленной безопасности2
+                +e.desc 
+                  p.text.b--text Опыт работы: 15 лет
+                  p.text Кратчайшие сроки и высокое качество 
+                +e.A.ref(href="#") 
+                  span.trait подробнее об услуге2
+
+
+            swiper-slide
+              img(src="img/intro/is1.jpg", alt="")
+              +e.content-carousel(ref="swiper_content")
+                h2.title Экспертиза промышленной безопасности3
+                +e.desc 
+                  p.text.b--text Опыт работы: 20 лет
+                  p.text Кратчайшие сроки и высокое качество 
+                +e.A.ref(href="#") 
+                  span.trait подробнее об услуге3
+
+
+            .swiper-scrollbar(slot="scrollbar")
+            .swiper-pagination(slot="pagination")
+            .swiper-button-prev(slot="button-prev" @click="btnPrev")
+            .swiper-button-next(slot="button-next" @click="btnNext")
+
+        
+        +e.content.col-sm-2 
+          .posr
+            +e.content-item(v-html="content" ref="content" @change="changed(data)")
+              h2.title Экспертиза промышленной безопасности
+              +e.desc 
+                p.text.b--text() Опыт работы: 10 лет
+                p.text Кратчайшие сроки и высокое качество
+
+              +e.A.ref(href="#") 
+                span.trait подробнее об услуге
+
+            button.btn-border-grad#btn(data-rotation="0")
+              i.i-yes 
+              span Отправить заявку на услугу

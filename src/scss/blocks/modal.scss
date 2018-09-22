@@ -7,6 +7,16 @@
   width: 100%;
   padding: 80px 15px 0;
 
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  //display: none;
+  overflow: hidden;
+  outline: 0;
+
   &__inner{
     padding: 20px;
     width: 100%;
@@ -36,6 +46,95 @@
   &__info{
     font-size: 10px;
     text-align: left;
+  }
+
+
+  &__registration{
+    max-width: 320px;
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    transform: translate(0,-25%);
+    margin: 1.75rem auto;
+  }
+  &__content{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+  }
+  .m-header{
+    background: url(../img/modal/m-title.png) no-repeat;
+    height: 80px;
+    width: 100%; 
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 30px;
+  }
+  .m-close{
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    opacity: 1;
+    svg{
+      font-size: 10px;
+      margin: 15px 15px 0 0;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+  .m-title{
+    color: #ffffff;
+    font-family: "museo900";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 80px;
+    text-transform: uppercase;
+
+  }
+  .m-text{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+  .m-body-content{
+    padding: 30px;
+  } 
+
+  .m-footer-content{
+    padding: 0 30px 30px 30px;
+    button{
+      color: #000000;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+  }
+
+  &.show{
+    .modal__registration{
+      transform: translate(0,0);
+
+    }
   }
 
   .hidden{

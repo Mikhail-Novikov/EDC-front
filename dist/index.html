@@ -51,58 +51,161 @@
   <body class="page__body stick-top">
     <div class="page__body-inner">
       <header class="header home" id="header" @click="closeAllWin">
-        <div class="container">
-          <div class="row posr justify-content-between">
-            <div class="header__inner">
-              <div class="header__logo">
-                <div class="header__logo-img">
-                  <svg class="icon-svg-logo-h align-middle" role="img">
-                    <use xlink:href="#icon-svg-logo-h"></use>
+        <div class="h-fon">
+          <div class="container">
+            <div class="row posr justify-content-between">
+              <div class="header__inner col-sm-5 justify-content-between">
+                <div class="header__logo">
+                  <div class="header__logo-img">
+                    <svg class="icon-svg-logo-h align-middle" role="img">
+                      <use xlink:href="#icon-svg-logo-h"></use>
+                    </svg>
+                  </div>
+                  <p class="header__logo-text align-middle">ресурс</p>
+                  <strong class="header__logo-desc">Экспертно-диагностический центр</strong>
+                </div>
+                <div class="header__contacts">
+                  <a class="header__contacts-fhone" href="tel:88127025643">8 812 702 56 43</a>
+                  <a class="header__contacts-link trait" href="#">обратный звонок </a>
+                </div>
+                <div class="header__call-message">
+                  <svg class="icon-svg-speech_bubble align-middle" role="img">
+                    <use xlink:href="#icon-svg-speech_bubble"></use>
                   </svg>
+                  <a class="header__contacts-link trait align-top" href="#">написать нам </a>
                 </div>
-                <p class="header__logo-text align-middle">ресурс</p>
-                <strong class="header__logo-desc">Экспертно-диагностический центр</strong>
               </div>
-              <div class="header__contacts">
-                <a class="header__contacts-fhone" href="tel:88127025643">8 812 702 56 43</a>
-                <a class="header__contacts-link trait" href="#">обратный звонок </a>
-              </div>
-              <div class="header__call-message">
-                <svg class="icon-svg-speech_bubble align-middle" role="img">
-                  <use xlink:href="#icon-svg-speech_bubble"></use>
-                </svg>
-                <a class="header__contacts-link trait align-top" href="#">написать нам </a>
-              </div>
+              <form class="header__search">
+                <span class="header__search-open-btn" @click="closeSearchWin">
+                  <svg class="icon-svg-search align-middle" role="img">
+                    <use xlink:href="#icon-svg-search"></use>
+                  </svg>
+                </span>
+                <transition name="fade">
+                  <div class="header__search-group" v-if="show">
+                    <button class="header__search-run-btn" type="submit">
+                      <svg class="icon-svg-search-input align-middle" role="img">
+                        <use xlink:href="#icon-svg-search-input"></use>
+                      </svg>
+                    </button>
+                    <input class="header__input-search" placeholder="Введите текст поиска" type="search" />
+                    <span class="header__search-close-btn" @click="closeSearchWin">
+                      <svg class="icon-svg-close-search align-middle" role="img">
+                        <use xlink:href="#icon-svg-close-search"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </transition>
+              </form>
             </div>
-            <form class="header__search">
-              <span class="header__search-open-btn" @click="closeSearchWin">
-                <svg class="icon-svg-search align-middle" role="img">
-                  <use xlink:href="#icon-svg-search"></use>
-                </svg>
-              </span>
-              <transition name="fade">
-                <div class="header__search-group" v-if="show">
-                  <button class="header__search-run-btn" type="submit">
-                    <svg class="icon-svg-search-input align-middle" role="img">
-                      <use xlink:href="#icon-svg-search-input"></use>
-                    </svg>
-                  </button>
-                  <input class="header__input-search" placeholder="Введите текст поиска" type="search" />
-                  <span class="header__search-close-btn" @click="closeSearchWin">
-                    <svg class="icon-svg-close-search align-middle" role="img">
-                      <use xlink:href="#icon-svg-close-search"></use>
-                    </svg>
-                  </span>
-                </div>
-              </transition>
-            </form>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <nav class="sub-menu justify-content-between">
+              <ul class="sub-menu__items col-sm-5">
+                <li class="sub-menu__item active">
+                  <a class="sub-menu__item-a" href="#">главная</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">О компании</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">Услуги</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">Новости</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">выполненные работы</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">Отзывы</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">Эксперты</a>
+                </li>
+                <li class="sub-menu__item">
+                  <a class="sub-menu__item-a" href="#">контакты</a>
+                </li>
+              </ul>
+              <a class="sub-menu__login-items" href="#">
+                <span class="sub-menu__login-item">Вход</span>
+              </a>
+            </nav>
           </div>
         </div>
       </header>
       <div class="main page__main">
-        <section class="intro-section">
+        <section class="intro-section" id="v-carousel">
           <div class="container">
-            <div class="row"></div>
+            <div class="row">
+              <div class="v-carousel col-sm-4">
+                <swiper :options="swiperOption" ref="swiper">
+                  <swiper-slide>
+                    <img src="img/intro/is1.jpg" alt="" />
+                    <div class="intro-section__content-carousel" ref="swiper_content">
+                      <h2 class="title">Экспертиза промышленной безопасности</h2>
+                      <div class="intro-section__desc">
+                        <p class="text b--text">Опыт работы: 10 лет</p>
+                        <p class="text">Кратчайшие сроки и высокое качество </p>
+                      </div>
+                      <a class="intro-section__ref" href="#">
+                        <span class="trait">подробнее об услуге</span>
+                      </a>
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <img src="img/intro/is1.jpg" alt="" />
+                    <div class="intro-section__content-carousel" ref="swiper_content">
+                      <h2 class="title">Экспертиза промышленной безопасности2</h2>
+                      <div class="intro-section__desc">
+                        <p class="text b--text">Опыт работы: 15 лет</p>
+                        <p class="text">Кратчайшие сроки и высокое качество </p>
+                      </div>
+                      <a class="intro-section__ref" href="#">
+                        <span class="trait">подробнее об услуге2</span>
+                      </a>
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <img src="img/intro/is1.jpg" alt="" />
+                    <div class="intro-section__content-carousel" ref="swiper_content">
+                      <h2 class="title">Экспертиза промышленной безопасности3</h2>
+                      <div class="intro-section__desc">
+                        <p class="text b--text">Опыт работы: 20 лет</p>
+                        <p class="text">Кратчайшие сроки и высокое качество </p>
+                      </div>
+                      <a class="intro-section__ref" href="#">
+                        <span class="trait">подробнее об услуге3</span>
+                      </a>
+                    </div>
+                  </swiper-slide>
+                  <div class="swiper-scrollbar" slot="scrollbar"></div>
+                  <div class="swiper-pagination" slot="pagination"></div>
+                  <div class="swiper-button-prev" slot="button-prev" @click="btnPrev"></div>
+                  <div class="swiper-button-next" slot="button-next" @click="btnNext"></div>
+                </swiper>
+              </div>
+              <div class="intro-section__content col-sm-2">
+                <div class="posr">
+                  <div class="intro-section__content-item" v-html="content" ref="content" @change="changed(data)">
+                    <h2 class="title">Экспертиза промышленной безопасности</h2>
+                    <div class="intro-section__desc">
+                      <p class="text b--text">Опыт работы: 10 лет</p>
+                      <p class="text">Кратчайшие сроки и высокое качество</p>
+                    </div>
+                    <a class="intro-section__ref" href="#">
+                      <span class="trait">подробнее об услуге</span>
+                    </a>
+                  </div>
+                  <button class="btn-border-grad" id="btn" data-rotation="0">
+                    <i class="i-yes"> </i>
+                    <span>Отправить заявку на услугу</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section class="benefit-section">
@@ -114,6 +217,47 @@
       <footer class="footer">
         <div class="page__inner"></div>
       </footer>
+    </div>
+    <div class="modal">
+      <div class="modal__registration">
+        <div class="modal__content">
+          <div class="m-header">
+            <h3 class="m-title">регистрация</h3>
+            <button class="m-close" type="button">
+              <svg class="icon-svg-close" role="img">
+                <use xlink:href="#icon-svg-close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="m-body-content">
+            <p class="m-text">Укажите e-mail, указанный при регистрации, и мы вышлем на него инструкции по смене пароля:</p>
+            <div class="m-form-group">
+              <div class="hidden" :class="minerror($v.name)">Минимум 3 символа</div>
+              <input class="field w-100" type="text" placeholder="Логин..." name="login" v-model="$v.login.$model" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="minerror($v.name)">Минимум 3 символа</div>
+              <input class="field w-100" type="text" placeholder="Ваше имя..." name="nic" v-model="$v.name.$model" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">Введите Вашу почту </div>
+              <input class="field w-100" type="text" placeholder="E-mail" name="email" v-model="email" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">Введите пароль </div>
+              <input class="field w-100" type="text" placeholder="Пароль..." name="password" v-model="password" autocomplete="off" />
+            </div>
+            <div class="m-form-group">
+              <div class="hidden" :class="[isEmailValid()]">пароли не совпадают! </div>
+              <input class="field w-100" type="text" placeholder="Повторите пароль..." name="c-password" v-model="c-password" autocomplete="off" />
+            </div>
+          </div>
+          <div class="m-footer-content">
+            <button class="btn-border-grad" type="submit" :disabled="submitStatus()">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal__order"></div>
     </div>
     <!-- JS-->
     <script src="js/lib.js">

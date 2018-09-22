@@ -108,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuelidate__WEBPACK_IMPORTED_MODULE_2___default.a);
 
 window.Vue = vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default.a;

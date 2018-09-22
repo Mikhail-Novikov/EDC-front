@@ -1,27 +1,32 @@
 .header{
   color: #000000;
-  background-color: #fff;
   font-family: "proxima-regular";
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
   text-transform: uppercase; 
+
+  .h-fon{
+    background-color: #fff;
+
+  }
+
   .row{
     overflow: hidden;
     flex-wrap: nowrap;
     z-index: 12;
   }
-
+  
   &__inner{
     width: 100%;
-    padding: 20px 15px 25px;    
+    padding: 25px 15px 25px;    
     display: flex;
     flex-wrap: wrap;
     align-items: center;  
   }
   &.home{
     .header__inner{
-      padding: 26px 0;   
+      padding: 35px 0;   
     }  
   }
 
@@ -78,8 +83,7 @@
   }
 
   &.home{
-    .header__contacts{ 
-      margin: 0 30px;
+    .header__contacts{
       padding: 13px 46px;
       border-color: #d1d1d1;  
       border-style: solid;
@@ -88,7 +92,7 @@
 
   &__call-message{
     margin-left: 0;
-    padding: 13px 30px 12px 18px;
+    padding: 13px 0 12px 18px;
     svg{
       font-size: 22px;
     }
@@ -96,7 +100,7 @@
       font-size: 11px;
       display: inline-block;
       padding-bottom: 3px;
-      margin: -2px 8px 0 5px;
+      margin: -2px 0 0 5px;
     }
   }
 
@@ -160,9 +164,7 @@
       outline: none;
     }
   }
-
-
-
+  
   @include media-breakpoint-up(xss) {
 
   }
@@ -177,14 +179,14 @@
         margin-right: 15px;
         margin-bottom: 0;
       }
-      margin-right: 19px;
+
       &-text{
         width: auto;
       }
     }
     &__inner{
       flex-wrap: nowrap; 
-      padding: 26px 45px;    
+      padding: 30px 45px;    
     }
     &__logo-desc{
       padding: 5px 18px;

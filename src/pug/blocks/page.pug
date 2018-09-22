@@ -1,4 +1,4 @@
-mixin page(title)
+mixin page(title,y)
   +b.HTML.page(lang='ru')&attributes(attributes)
     head
       title #{title} - #{pkg.description}
@@ -19,9 +19,49 @@ mixin page(title)
 
       script
         include ../../vendors/svg-symbols/svg-symbols.js
-    +e.BODY.__body.stick-top
+    +e.BODY.__body(class=`${y}`)
       +e.__body-inner
         block
+
+      +b.modal
+        +e.registration
+          +e.content
+            .m-header
+              h3.m-title регистрация
+              button.m-close(type="button")
+                +icon-svg('close')
+
+
+            .m-body-content
+              p.m-text Укажите e-mail, указанный при регистрации, и мы вышлем на него инструкции по смене пароля:
+
+              .m-form-group
+                .hidden( :class="minerror($v.name)" ) Минимум 3 символа
+                +b.INPUT.field.w-100(type='text' placeholder='Логин...' name='login' v-model="$v.login.$model" autocomplete="off")                           
+              .m-form-group
+                .hidden( :class="minerror($v.name)" ) Минимум 3 символа
+                +b.INPUT.field.w-100(type='text' placeholder='Ваше имя...' name='nic' v-model="$v.name.$model" autocomplete="off")
+
+              .m-form-group
+                .hidden( :class="[isEmailValid()]" ) Введите Вашу почту            
+                +b.INPUT.field.w-100(type='text' placeholder='E-mail' name='email' v-model="email" autocomplete="off")
+
+              .m-form-group
+                .hidden( :class="[isEmailValid()]" ) Введите пароль            
+                +b.INPUT.field.w-100(type='text' placeholder='Пароль...' name='password' v-model="password" autocomplete="off")
+
+              .m-form-group
+                .hidden( :class="[isEmailValid()]" ) пароли не совпадают!            
+                +b.INPUT.field.w-100(type='text' placeholder='Повторите пароль...' name='c-password' v-model="c-password" autocomplete="off")  
+                              
+            .m-footer-content 
+              +b.BUTTON(type='submit' :disabled="submitStatus()").btn-border-grad Зарегистрироваться
+
+
+
+        +e.order
+
+
       // JS
       script(src=`js/lib${development ? '' : ''}.js`)      
       script(src=`js/app${development ? '' : ''}.js` async='')
