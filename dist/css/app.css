@@ -1330,6 +1330,10 @@ h2 {
   padding: 1.875rem;
 }
 
+.modal .m-form-group {
+  position: relative;
+}
+
 .modal .m-footer-content {
   padding: 0 1.875rem 1.875rem 1.875rem;
 }
@@ -1528,8 +1532,7 @@ textarea.field::-webkit-input-placeholder {
   background-color: transparent;
   color: #000;
   text-decoration: none;
-  font-weight: 700;
-  font-family: "proxima-regular";
+  font-family: "proxima-bold";
   z-index: 1;
   width: 100%;
   border: 0;
@@ -1593,7 +1596,7 @@ textarea.field::-webkit-input-placeholder {
 @media (min-width: 48rem) {
   .btn-border-grad {
     font-weight: 300;
-    font-family: "proxima-light";
+    font-family: "proxima-bold";
   }
 }
 

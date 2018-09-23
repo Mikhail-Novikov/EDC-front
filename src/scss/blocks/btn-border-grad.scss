@@ -5,8 +5,7 @@
   background-color: transparent; 
   color: #000;
   text-decoration: none;
-  font-weight: 700;
-  font-family: "proxima-regular";
+  font-family: "proxima-bold";
   z-index: 1;
   width: 100%;
   border: 0;
@@ -68,7 +67,7 @@
   }
   @include media-breakpoint-up(xss) {
     font-weight: 300;
-    font-family: "proxima-light";
+    font-family: "proxima-bold";
   } 
 
   @include media-breakpoint-up(sm) {

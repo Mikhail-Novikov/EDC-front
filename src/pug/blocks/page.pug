@@ -23,8 +23,8 @@ mixin page(title,y)
       +e.__body-inner
         block
 
-      +b.modal
-        +e.registration
+      +b.modal#valid_form
+        +e.registration#type_form
           +e.content
             .m-header
               h3.m-title регистрация
@@ -36,26 +36,26 @@ mixin page(title,y)
               p.m-text Укажите e-mail, указанный при регистрации, и мы вышлем на него инструкции по смене пароля:
 
               .m-form-group
-                .hidden( :class="minerror($v.name)" ) Минимум 3 символа
-                +b.INPUT.field.w-100(type='text' placeholder='Логин...' name='login' v-model="$v.login.$model" autocomplete="off")                           
+                .hidden( :class="minerror($v.login)" ) Минимум 3 символа
+                +b.INPUT.field.w-100(type='text' placeholder='Логин...' name='login' v-model="login" autocomplete="off")                           
               .m-form-group
                 .hidden( :class="minerror($v.name)" ) Минимум 3 символа
                 +b.INPUT.field.w-100(type='text' placeholder='Ваше имя...' name='nic' v-model="$v.name.$model" autocomplete="off")
 
               .m-form-group
-                .hidden( :class="[isEmailValid()]" ) Введите Вашу почту            
+                .hidden( :class="isEmailValid()" ) Введите Вашу почту            
                 +b.INPUT.field.w-100(type='text' placeholder='E-mail' name='email' v-model="email" autocomplete="off")
 
               .m-form-group
-                .hidden( :class="[isEmailValid()]" ) Введите пароль            
-                +b.INPUT.field.w-100(type='text' placeholder='Пароль...' name='password' v-model="password" autocomplete="off")
-
+                .hidden( :class="minerror($v.password)" ) Введите пароль            
+                +b.INPUT.field.w-100(type='text' placeholder='Пароль...' name='password' v-model="$v.password.$model" autocomplete="off")
+                //pre {{$v.password}}
               .m-form-group
-                .hidden( :class="[isEmailValid()]" ) пароли не совпадают!            
-                +b.INPUT.field.w-100(type='text' placeholder='Повторите пароль...' name='c-password' v-model="c-password" autocomplete="off")  
+                .hidden(:class="{ error: !$v.cpassword.sameAsPassword}" v-if="!$v.password.$invalid") пароли не совпадают!            
+                +b.INPUT.field.w-100(type='text' placeholder='Повторите пароль...' name='cpassword' v-model.trim="$v.cpassword.$model" autocomplete="off" :disabled="$v.password.$invalid")  
                               
             .m-footer-content 
-              +b.BUTTON(type='submit' :disabled="submitStatus()").btn-border-grad Зарегистрироваться
+              +b.BUTTON(type='submit' ref="type_btn" data-type-form="registration" :disabled="submitStatus()" ).btn-border-grad Зарегистрироваться
 
 
 

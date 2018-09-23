@@ -133,7 +133,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _require = __webpack_require__(3),
     required = _require.required,
-    minLength = _require.minLength;
+    minLength = _require.minLength,
+    sameAs = _require.sameAs;
 
 exports.default = validForm();
 
@@ -149,6 +150,9 @@ function validForm() {
         name: '',
         email: '',
         message: '',
+        login: '',
+        password: '',
+        cpassword: '',
         reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
       };
     },
@@ -157,11 +161,21 @@ function validForm() {
       name: {
         required: required,
         minLength: minLength(3)
-
       },
       message: {
-        required: required,
+        required: false,
         minLength: minLength(10)
+      },
+      login: {
+        required: required,
+        minLength: minLength(3)
+      },
+      password: {
+        required: required,
+        minLength: minLength(3)
+      },
+      cpassword: {
+        sameAsPassword: sameAs('password')
       }
     },
     methods: {
@@ -20146,14 +20160,23 @@ module.exports = (_module$exports = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = modal;
 
 
 function modal() {
 
-  console.log('modal');
+    var type_form = new Vue({
+        el: '#type_form',
+        data: function data() {
+            return {
+                type: ''
+            };
+        }
+    });
+
+    console.log(type_form);
 }
 
 /***/ })

@@ -58,6 +58,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'proxima-bold';
+  src: url("../fonts/ProximaNova-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype"), url("../fonts/ProximaNova-Bold.svg") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -1136,21 +1146,6 @@ template {
 
 .icon-svg-speech_bubble {
   width: 1em;
-  height: 1em;
-}
-
-.icon-svg-logo-h {
-  width: 0.875em;
-  height: 1em;
-}
-
-.icon-svg-more {
-  width: 1.375em;
-  height: 1em;
-}
-
-.icon-svg-ref {
-  width: 1.1111111111111112em;
   height: 1em;
 }
 
